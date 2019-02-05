@@ -10,8 +10,9 @@ slack_client = SlackClient(environ.get('SLACK_BOT_TOKEN'))
 bot_id = None
 
 # constants
-READ_DELAY = 1 # 1 second delay between reading from RTM
+READ_DELAY = 1  # 1 second delay between reading from RTM
 MENTION_REGEX = '^<@(|[WU].+?)>(.*)'
+
 
 def parse_bot_commands(slack_events):
     """
@@ -26,6 +27,7 @@ def parse_bot_commands(slack_events):
                 return message, event["channel"]
     return None, None
 
+
 def parse_direct_mention(message_text):
     """
         Finds a direct mention (a mention that is at the beginning) in message text
@@ -34,6 +36,7 @@ def parse_direct_mention(message_text):
     matches = re.search(MENTION_REGEX, message_text)
     # the first group contains the username, the second group contains the remaining message
     return (matches.group(1), matches.group(2).strip()) if matches else (None, None)
+
 
 def handle_command(command, channel):
     """
@@ -50,7 +53,7 @@ def handle_command(command, channel):
     if 'something' in command:
         # Do stuff
 
-    # Sends the response back to the channel
+        # Sends the response back to the channel
     slack_client.api_call(
         "chat.postMessage",
         channel=channel,
@@ -58,6 +61,7 @@ def handle_command(command, channel):
         as_user=True,
         attachments=attachments_json
     )
+
 
 if __name__ == "__main__":
     if slack_client.rtm_connect(with_team_state=False):
