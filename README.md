@@ -28,4 +28,11 @@ Question Answering over Knowledge Bases - https://ieeexplore-ieee-org.ep.bib.mdh
 A Corpus-based approach to generalising a chatbot system - http://www.sepln.org/revistaSEPLN/revista/31/31-Pag309.pdf
 NLP-QA Framework Based on LSTM-RNN - https://ieeexplore.ieee.org/abstract/document/8588934
 ### Niklas
+Intelligent question answering system based on Artificial Neural Network - https://ieeexplore-ieee-org.ep.bib.mdh.se/document/7569350
+
+A framework for restricted domain Question Answering System - https://ieeexplore-ieee-org.ep.bib.mdh.se/document/6781351
+
+Research on question classification for Automatic Question Answering - https://ieeexplore-ieee-org.ep.bib.mdh.se/document/7875972
+
+Question answering system on education acts using NLP techniques - https://ieeexplore-ieee-org.ep.bib.mdh.se/document/7583963
 ### Staffan
