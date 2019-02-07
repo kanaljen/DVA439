@@ -25,7 +25,9 @@ Ladda ner https://www.python.org/downloads/
 TextUnderstandingfromScratch - https://arxiv.org/pdf/1502.01710.pdf
 ### Rasmus
 Question Answering over Knowledge Bases - https://ieeexplore-ieee-org.ep.bib.mdh.se/stamp/stamp.jsp?tp=&arnumber=7243222
+
 A Corpus-based approach to generalising a chatbot system - http://www.sepln.org/revistaSEPLN/revista/31/31-Pag309.pdf
+
 NLP-QA Framework Based on LSTM-RNN - https://ieeexplore.ieee.org/abstract/document/8588934
 ### Niklas
 Intelligent question answering system based on Artificial Neural Network - https://ieeexplore-ieee-org.ep.bib.mdh.se/document/7569350
