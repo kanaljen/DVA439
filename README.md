@@ -23,6 +23,10 @@ Ladda ner https://www.python.org/downloads/
 ## Källor
 ### Peter
 TextUnderstandingfromScratch - https://arxiv.org/pdf/1502.01710.pdf
+
+Character-levelConvolutionalNetworksforText Classiﬁcation - http://papers.nips.cc/paper/5782-character-level-convolutional-networks-for-text-classifica
+
+
 ### Rasmus
 Question Answering over Knowledge Bases - https://ieeexplore-ieee-org.ep.bib.mdh.se/stamp/stamp.jsp?tp=&arnumber=7243222
 
