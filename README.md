@@ -34,6 +34,12 @@ Question Answering over Knowledge Bases - https://ieeexplore-ieee-org.ep.bib.mdh
 A Corpus-based approach to generalising a chatbot system - http://www.sepln.org/revistaSEPLN/revista/31/31-Pag309.pdf
 
 NLP-QA Framework Based on LSTM-RNN - https://ieeexplore.ieee.org/abstract/document/8588934
+
+Deep Learning for Answer Sentence Selection - https://arxiv.org/pdf/1412.1632.pdf
+
+Attention-Based Convolutional Neural Network for Machine Comprehension - https://arxiv.org/pdf/1602.04341.pdf
+
+Semantic Parsing for Single-Relation Question Answering - http://www.aclweb.org/anthology/P14-2105
 ### Niklas
 Intelligent question answering system based on Artificial Neural Network - https://ieeexplore-ieee-org.ep.bib.mdh.se/document/7569350
 
