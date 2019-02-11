@@ -49,3 +49,8 @@ Research on question classification for Automatic Question Answering - https://i
 
 Question answering system on education acts using NLP techniques - https://ieeexplore-ieee-org.ep.bib.mdh.se/document/7583963
 ### Staffan
+Ask Me Anything: Dynamic Memory Networks for Natural Language Processing - https://arxiv.org/pdf/1506.07285.pdf
+
+NLTK: The Natural Language Toolkit - http://www.aclweb.org/anthology/P04-3031
+
+Advances in natural language processing - http://cs224d.stanford.edu/papers/advances.pdf
