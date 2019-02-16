@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{References.bib}
 
 \title{Project}
 \author{Staffan Brickman\\
@@ -14,5 +16,9 @@ Niklas Fasth}
 \maketitle
 % Section 1 --------------------------------
 \section{First Section}
+\include{Report/section1.tex}
+\section{Related work}
+\input{Report/related_work.tex}
 
+\printbibliography
 \end{document}
