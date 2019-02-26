@@ -25,7 +25,7 @@ def processor(raw):
     # Split sentences into words
     tokenized = []
     for sentence in raw:
-        sentence.lower()
+        sentence = sentence.lower()
         tokenized.append(nltk.word_tokenize(sentence))
     print('raw -> tokenized')
     # Filter stopwords from sentences
@@ -56,7 +56,6 @@ def calculate_weight(processed):
     for item in weights:
         weights[item] = 1/weights[item]
     print('processed -> weights')
-    print(weights)
     return weights
 
 
