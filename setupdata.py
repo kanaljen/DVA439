@@ -49,13 +49,14 @@ def processor(raw):
 
 def calculate_weight(processed):
     """ calculate words weights based on occurrence
-        returns a dictionary with words and weights"""
+        returns a dictionary with words and weights (Term Frequency)"""
     weights = Counter()
     for sentence in processed:
         weights.update(word for word in sentence)
     for item in weights:
         weights[item] = 1/weights[item]
     print('processed -> weights')
+    print(weights)
     return weights
 
 
