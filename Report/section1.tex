@@ -1,0 +1,27 @@
+%Rasmus notes
+"Rule-based bots:
+A bot answers questions based on some rules on which it is trained on. The rules defined can be very simple to very complex. The bots can handle simple queries but fail to manage complex ones.
+
+Self learning bots:
+Are the ones that use some Machine Learning-based approaches and are definitely more efficient than rule-based bots. These bots can be of further two types: 
+Retrieval Based or Generative.
+
+In retrieval-based models, a chatbot uses some heuristic to select a response from a library of predefined responses. The chatbot uses the message and context of conversation for selecting the best response from a predefined list of bot messages. The context can include a current position in the dialog tree, all previous messages in the conversation, previously saved variables (e.g. username). Heuristics for selecting a response can be engineered in many different ways, from rule-based if-else conditional logic to machine learning classifiers.
+
+Generative bots can generate the answers and not always replies with one of the answers from a set of answers. This makes them more intelligent as they take word by word from the query and generates the answers."
+
+TF-IDF
+This is a method that measure of how important a word is in a document. 
+TF (Term Frequency) is the term of how often a word appears in the text with relation of how many word in the text. 
+IDF (Inverse Ducument Frequency) is how frequent the word appears across different document. IDF = 1+log(N/n) where N is the number of documents and n is the number of documents the word appears in.   
+This method is a transformation applied to text and returns two real-valued vectors in vector space. 
+
+Cosine Similarity
+This is a measure of the similarity between two none-zero vectors.
+The cosine similarity can be obtained by taking the dot product on the two vectors returned by the TF-IDF method and divide the result by the product of their norms.  
+
+
+Noun Phrase Chunking
+This method chunks the parts of the sentences  
+Optional determiner (DT) followed by any number of adjectives (JJ) and then a noun (NN). 
+
