@@ -27,4 +27,5 @@ def plotAsVectors(x,y,query=[],labelx='',labely=''):
     plt.ylim(-0.1, 1.1)
     plt.axhline(0, color='black',linestyle='dotted')
     plt.axvline(0, color='black',linestyle='dotted')
-    plt.savefig('vectorplot({}).png'.format(time.strftime("%H:%M:%S")))
+    # ISO 8601 format as name
+    plt.savefig('{}.png'.format(time.strftime("vp_%Y%m%dT%H%M%S")))
