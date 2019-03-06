@@ -1,0 +1,73 @@
+\subsection{Natural Language Toolkit (NLTK)}
+NLTK is a toolkit used in Python which provides handy tools for NLP. It provides over 50 corpora along with lexical resources and text processing algorithms such as stemming, tagging, parsing, and semantic reasoning and much more.\cite{nltk_book} In this work lemmatizing, tokenizing and POS-tagging are particularly used.
+\subsection{Pre-processing}
+In order to work with and extract feature vectors from the text some pre-processing is done. 
+\subsubsection{Lower}
+The first step in the pre-processing is to make all the letters to lower case. This will make the comparison between words easier.  
+\subsubsection{Lemmatize}
+To lemmatize words means to group together different conflicting forms of a word so it can be anasysed as the same. 
+For example, the verb "to run" may appear as run, running, ran and runs. These words would be lemmatized into there basic form "run". 
+\subsubsection{Tokenization}
+Tokenizing some text can either be done by word or by sentence. By word means that the text is separated by word, and by sentence means the text is separated by sentence.
+Take for example this text: 
+
+"This is an example text showing of Tokenization. This will illustrate the method fine.". 
+
+Tokenizing this paragraph by sentence will result in: 
+
+['This is an example text showing of Tokenization.', 'This will illustrate the method fine.'].
+
+Tokenizing this paragraph by word will result in: 
+
+['This', 'is', 'an', 'example', 'text', 'showing', 'of', 'Tokenization', '.', 'This', 'will', 'illustrate', 'the', 'method', 'fine', '.']
+
+The word-tokenizer separates commas, dots, numbers etc. as separate words. This is important because they have their own semantic encoding and part-of-speech-tag.  
+\subsubsection{Part-of-Speech (POS)}
+POS-tagging labels the tokenized words in a text as nouns, adjectives, verbs, tense form etc. The labelling is done using a trained model in the NLTK library. 
+Using the same sentence as above will yield:
+
+[('This', 'DT'), ('is', 'VBZ'), ('an', 'DT'), ('example', 'NN'), ('text', 'NN'), ('showing', 'NN'), ('of', 'IN'), ('Tokenization', 'NNP'), ('.', '.'), ('This', 'DT'), ('will', 'MD'), ('illustrate', 'VB'), ('the', 'DT'), ('method', 'NN'), ('fine', 'NN'), ('.', '.')]
+
+Where 'NN' is a singular noun, 'NNP' is a singular proper noun, 'VB' is a verb in base form, etc. 
+
+\subsection{NE-dictionary}
+Named entity (NE) recognition is a method that puts a label on each word in a text. Using NE recognition may help the chatbot to understand the text (can be seen as its data base). The NE method used in this project recognizes words as:
+
+\begin{itemize}
+  \item Organization
+  \item Person
+  \item Location
+  \item Date
+  \item Time
+  \item Money
+  \item Per cent
+  \item Facility
+  \item Geopolitical Entity (GPE)
+  \item Other
+\end{itemize}
+
+
+
+\subsubsection{"Wh" word}
+A question can be further understood by understanding what type of answer the questioner is looking for. One way to achieve this knowledge is by looking at the "Wh" word the query is holding~\cite{RestrictedDomain}. A "Wh" word of a query describes how to answer that question. Examples of "Wh" words are "Where", "When", "Who", "What" etc. Those four words mentioned are the "Wh" words implemented in this program. Any other "Wh" word will not be understood by the chatbot. When the "Wh" word has been identified, the chatbot will remove all sentences that are not relevant for that type of question. This to obviously reduce the number of sentences to compare, but also, as a side effect, to possibly get a more accurate answer. Returning to the NE part, the chatbot can easily filter out a lot of sentences if it knows that the questioner is looking for a date or time. This will be the case if the "Wh" word is equal to "When". When the "Wh" word is known, the program will search through the lemmatized text with NE-labels. Whenever a sentence including a word with a NE-label that satisfies the question, that sentence will be kept. All other sentences will be removed. Returning to the previous example with a "Wh" word of "When", the chatbot will keep all sentences including a word with a NE-label of "Time" and "Date". Table.\ref{table:wh_words} shows which NE-labels and "Wh" words are connected to each other.
+
+    \begin{table}[H]
+    \begin{center}
+    \caption{NE-labels corresponding to "Wh" words}
+    \label{table:wh_words}
+    \begin{tabular}{| l | l |}
+    \hline
+    "Wh" word  & NE-label           \\ \hline 
+    Where & Location \& GPE         \\ \hline
+    When  & Time \& Date            \\ \hline
+    Who  & Person \& Organization   \\ \hline
+    What  & Any label               \\ \hline 
+    \end{tabular}
+    \end{center}
+    \end{table}
+
+
+
+\subsection{TD-IDF}
+Tjena Niklas. Jag skrev tidigare lite om TD-IDF och cosine similarity. Det ligger under "section1.tex". Du kan kolla om du vill använda något av det. 
+\subsection{Cosine similarity}

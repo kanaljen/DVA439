@@ -2,8 +2,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[backend=biber]{biblatex}
+\usepackage{float}
 \addbibresource{References.bib}
 
+\usepackage{comment}
 \title{Project}
 \author{Staffan Brickman\\
 Peter Andersson\\
@@ -12,13 +14,25 @@ Niklas Fasth}
 \date{March 2018}
 
 \begin{document}
-
-\maketitle
-% Section 1 --------------------------------
-\section{First Section}
-\include{Report/section1.tex}
+\input{Coversheet}
+%\maketitle
+% Section 1 --------------------------
+\begin{abstract}
+    Here goes the abstract text...
+\end{abstract}
+\section{Introduction}
+\input{Report/Introduction.tex}
 \section{Related work}
 \input{Report/related_work.tex}
+\section{Problem Formulation}
+\input{Report/Problem_Formulation.tex}
+\section{Approach \& Method}
+\input{Report/Approach_Method.tex}
+\section{Results \& Analysis}
+\input{Report/Results_Analysis.tex}
+\section{Conclusion}
+\input{Report/Conclusion.tex}
+
 
 \printbibliography
 \end{document}

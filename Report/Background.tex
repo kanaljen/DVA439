@@ -1,0 +1,66 @@
+\subsection{Named Entity Recognition}
+Named Entity Recognition (NER) is a useful tool in NLP. It classifies named entities in a text into pre-defined classes like people, places, things, locations, monetary figures, and more. In NLTK there are three steps to perform NER, word tokenization, part-of-speech (POS) tagging and NER. 
+Tokenizing some text can either be done by word or by sentence. By word means that the text is separated by word, and by sentence means the text is separated by sentence.
+Take for example this text: 
+
+"This is an example text showing of Tokenization. This will illustrate the method fine.". 
+
+Tokenizing this paragraph by sentence will result in: 
+
+['This is an example text showing of Tekenization.', 'This will illustrate the method fine.'].
+
+Tokenizing this paragraph by word will result in: 
+
+['This', 'is', 'an', 'example', 'text', 'showing', 'of', 'Tekenization', '.', 'This', 'will', 'illustrate', 'the', 'method', 'fine', '.']
+
+The second step is POS tagging, which labels the tokenized words in a text as nouns, adjectives, verbs, tense form etc.
+
+The next step is to do named entity chunking. This function returns a tree type consisting of chunks, named PEOPLE if it's a person, ORGANIZATION if it's an organization etc. 
+
+\begin{comment}
+#POS tag list:
+
+#CC	coordinating conjunction
+#CD	cardinal digit
+#DT	determiner
+#EX	existential there (like: "there is" ... think of it like "there exists")
+#FW	foreign word
+#IN	preposition/subordinating conjunction
+#JJ	adjective	'big'
+#JJR	adjective, comparative	'bigger'
+#JJS	adjective, superlative	'biggest'
+#LS	list marker	1)
+#MD	modal	could, will
+#NN	noun, singular 'desk'
+#NNS	noun plural	'desks'
+#NNP	proper noun, singular	'Harrison'
+#NNPS	proper noun, plural	'Americans'
+#PDT	predeterminer	'all the kids'
+#POS	possessive ending	parent\'s
+#PRP	personal pronoun	I, he, she
+#PRP$	possessive pronoun	my, his, hers
+#RB	adverb	very, silently,
+#RBR	adverb, comparative	better
+#RBS	adverb, superlative	best
+#RP	particle	give up
+#TO	to	go 'to' the store.
+#UH	interjection	errrrrrrrm
+#VB	verb, base form	take
+#VBD	verb, past tense	took
+#VBG	verb, gerund/present participle	taking
+#VBN	verb, past participle	taken
+#VBP	verb, sing. present, non-3d	take
+#VBZ	verb, 3rd person sing. present	takes
+#WDT	wh-determiner	which
+#WP	wh-pronoun	who, what
+#WP$	possessive wh-pronoun	whose
+#WRB	wh-abverb	where, when
+\end{comment}
+
+
+\subsection{Natural Language Toolkit (NLTK)}
+NLTK is a toolkit used in Python which provides handy tools for NLP. IT provides over 50 corpora along with lexical resources and text processing algorithms such as stemming, tagging, parsing, and semantic reasoning and much more.\cite{nltk_book}
+
+\subsection{TD-IDF}
+Tjena Niklas. Jag skrev tidigare lite om TD-IDF och cosine similarity. Det ligger under "section1.tex". Du kan kolla om du vill använda något av det. 
+\subsection{Cosine similarity}
