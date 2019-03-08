@@ -189,7 +189,6 @@ def sentencesToCompare(head_word,sent_tokens,entity_tag_to_check, weights, raw):
 
 # Generating response
 def response(user_response,wh_word,entity_labels,entity_tag, data):
-    robo_response=''
     head_word = []
     entity_to_save = []
     temp_sent_tokens = []
@@ -230,17 +229,52 @@ def response(user_response,wh_word,entity_labels,entity_tag, data):
     # Store the sentences, weights and raw text that are relevant
     temp_sent_tokens, temp_weights, temp_raw = sentencesToCompare(head_word, data['processed'][0:-1] ,entity_tag_to_check, data['weights'], data['raw'])
 
-    # Converts the weigts to an numpy array
-    temp_weights = np.asarray(temp_weights)
     
-    # Gets index for the highest/best mathing weight/sentence
-    answrI = temp_weights.argsort()[-1]
-    
-    # Prints the final answer
-    print(temp_raw[answrI])
-    
-    return temp_sent_tokens, temp_weights
+    if temp_weights:    
+        # Converts the weigts to an numpy array
+        temp_weights = np.asarray(temp_weights)
+        # Gets index for the highest/best mathing weight/sentence
+        answrI = temp_weights.argsort()[-1]
+        
+        # Prints the final answer
+        return temp_raw[answrI]
+        
+        #return temp_sent_tokens, temp_weights
+    else:
+       return "Sorry I was not able to find an answer"
 
+# Generate entities not in training set, but in raw text
+def missing_entities(raw,current_entity_names):
+    entity_names = []
+    final_entities = []
+    final_entities_ne = []
+    final_entities_pos = []
+    sentences = nltk.sent_tokenize(raw)
+    tokenized_sentences = [nltk.word_tokenize(sentence) for sentence in sentences]
+    tagged_sentences = [nltk.pos_tag(sentence) for sentence in tokenized_sentences]
+    chunked_sentences = nltk.ne_chunk_sents(tagged_sentences, binary=False)
+    for sentence in tagged_sentences:
+        for word in sentence:
+            if word[1] == 'CD':
+                # If part of speech is "Cardinal Digit" (A number)
+                # Add to label "TIME"
+                final_entities.append(word[0])
+                final_entities_pos.append(word[1])
+                final_entities_ne.append('TIME')
+    for tree in chunked_sentences:
+        for child in tree:
+            if hasattr(child, 'label') and child.label:
+                if any(c in child.label() for c in (NE_GROUPS)):
+                    if child[0][0] not in current_entity_names:
+                        # If the word is not in training set
+                        entity_names.append(child)
+
+    for child in entity_names:
+        final_entities_ne.append(child.label())        
+        final_entities.append(child[0][0])
+        final_entities_pos.append(child[0][1])
+        
+    return final_entities, final_entities_pos, final_entities_ne
 
 def train_entity():
     # Data base
@@ -282,21 +316,26 @@ def train_entity():
                 final_entity_pos.append(entity_pos[i])
                 final_entity_label.append(label)
             i += 1
+            
+    raw = read_file() 
+    new_names = []
+    new_pos = []
+    new_label = []
+    new_names, new_pos, new_label = missing_entities(raw,final_entity_names)
+    i = 0
+    for word in new_names:
+        final_entity_names.append(word)
+        final_entity_pos.append(new_pos[i])
+        final_entity_label.append(new_label[i])
+        i += 1
+        
     # Store the words, labels and POS's in a matrix
-    np.asarray(final_entity_names)
-    np.asarray(final_entity_pos)
-    np.asarray(final_entity_label)
     entities_to_return = np.vstack((final_entity_names, final_entity_pos,final_entity_label)).T
     # Return matrix (data base)
     return entities_to_return
             
 
 def main(argv):
-    #if len(argv)!=2:
-    #    print('wrong number of arguments')
-    #    print('usage:',argv[0],'<inputfile>')
-    #    exit(0)
-    # 1. Read data from file
     
     # Save a data base of NE
     entities = train_entity()
@@ -314,30 +353,26 @@ def main(argv):
         else:
             wh_word = whWord(user_response)
             print('wh_word = ', wh_word)
-        if wh_word:  
-    
-            raw = raw + "\n" + user_response
-            
-            data = {'raw': nltk.sent_tokenize(raw)}
-            print('raw -> data')
-            # 2. Process raw text
-            data['processed'] = processor(data['raw'])
-            print('processed -> data')
-            # 3. Calculate weights for the words
-            data['weights'] = calculate_weight(data['processed'])
-            print('weights -> data')
+            if wh_word:  
         
-            # Calculates and prints the response
-            response(user_response,wh_word,entities[:,2].tolist(),entities[:,0].tolist(), data)
+                raw = raw + "\n" + user_response
+                
+                data = {'raw': nltk.sent_tokenize(raw)}
+                print('raw -> data')
+                # 2. Process raw text
+                data['processed'] = processor(data['raw'])
+                print('processed -> data')
+                # 3. Calculate weights for the words
+                data['weights'] = calculate_weight(data['processed'])
+                print('weights -> data')
             
-            #print_answer(data)
-            # 4. Save output to json
-            #write_json(data,"test.txt")
-    
-        else:
-            print("ROBO: You need to start with a wh-word",end="")
-            #print(response(user_response,wh_word,entities_ne))
-            #sent_tokens.remove(user_response)
+                # Calculates and prints the response
+                print(response(user_response,wh_word,entities[:,2].tolist(),entities[:,0].tolist(), data))
+
+        
+            else:
+                print("ROBO: You need to start with a wh-word",end="")
+                
 if __name__ == "__main__": main(sys.argv)
 
 
