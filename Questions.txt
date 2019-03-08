@@ -1,3 +1,27 @@
-What is the population in sweden?
-Sweden has a total population of 10.2 million of which 2.4 million has a foreign background.
-1
+0.5 How is the health of swedes?
+1   How is the wealth swedes?
+0   Who is the current king?
+1   What is the capital city?
+0.5 What is the population in Sweden?
+1   Where is sweden located?
+?   How big is Sweden?
+0   What is the largest city?
+0   When did sweden fight in a war?
+0   What is the currency in sweden?
+0   What is the per capita in Sweden?
+0   What is people in Sweden known for?
+1   What is a big company in Sweden?
+0   Who is famous in sports?
+0   Who is the best football player?
+1   How is the climate?
+0   Where does the name sweden come from?
+0   When did the vikings rule?
+1   When did sweden join the European Union?
+0   Who is the prime minister?
+0   How is the justice?
+1   How big is the unemployment?
+0.5 How is the public transport?
+0   How much do swedes pay in taxes?
+0   What does sweden export?
+1   When is the national day of sweden?
+1   Who is Zlatan?
