@@ -25,3 +25,31 @@
 0   What does sweden export?
 1   When is the national day of sweden?
 1   Who is Zlatan?
+What:
+1	  What is the highest temperature recorded in Sweden?
+1	  What is the lowest temperature recorded in Sweden?
+?	  What is the size of Sweden?
+1	  What are the main morning tabloids in Sweden?
+?	  What is ABBA?
+1	  What is the number of people with foreign background in Sweden?
+1	  What are the taxes in Sweden?
+0.5	What is the GDP in Sweden?
+1	  What is the number of foreign background born people in Sweden?
+1	  What is the capital in Sweden?
+Where:
+0	  Where is Sweden located?
+1	  Where lies Sweden?	
+1	  Where is Swedish bishops' seated?
+0	  Where is Stockholm located?	
+Who:
+0	  Who is the monarch in Sweden?
+1	  Who were Greta Garbo?
+1	  Who were the last war in Sweden against?
+0	  Which were the Swedish vikings?
+0	  Who are Swedens' most famous authors?
+0	  Who are ABBA?
+When:
+1	  When were the last war in Sweden?
+1	  When is Sweden's National Day?
+1	  When is the Saint Lucia Day in Sweden?
+1	  When is Walpurgis Night?
