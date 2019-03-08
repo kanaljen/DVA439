@@ -16,10 +16,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Start the question with a "wh-word"
-WH_INPUTS_NE = ("where", "who", "when", "what")
+WH_INPUTS_NE = ("where", "who", "when", "what", "which", "how")
 # Labels for NE
 NE_GROUPS = ("NE","ORGANIZATION","PERSON","LOCATION","DATE","TIME","MONEY","PERCENT","FACILITY","GPE")
-
+#Nouns
+NN_GROUP = ("NN","NNS","NNP","NNPS")
 def read_file():
     """ tries to read <inputfile> and returns raw text """
     try:
@@ -143,7 +144,7 @@ def headWord(user_response):
         if word in WH_INPUTS_NE:
             for part in tagged:
                 # Look for nouns and noun-phrases
-                if part[1] == 'NN' or part[1] == 'NNP':
+                if part[1] in NN_GROUP:#part[1] == 'NN' or part[1] == 'NNP':
                     nnp = 1
                     #print('returning headword:', part[0])
                     phrase_to_return.append(part[0])
@@ -201,7 +202,7 @@ def response(user_response,wh_word,entity_labels,entity_tag, data):
         entity_to_save = ("LOCATION","GPE")
     elif wh_word == 'when':
         entity_to_save = ("DATE","TIME")
-    elif wh_word == 'who':
+    elif wh_word == 'who' or wh_word == 'which':
         entity_to_save = ("ORGANIZATION","PERSON")
     else:
         # Wh-word = 'What'
