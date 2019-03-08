@@ -297,7 +297,6 @@ def main(argv):
     #    print('usage:',argv[0],'<inputfile>')
     #    exit(0)
     # 1. Read data from file
-    raw = read_file()
     
     # Save a data base of NE
     entities = train_entity()
@@ -306,7 +305,7 @@ def main(argv):
     print("Enter a question. Type 'bye' to end.")
     flag = True
     while(flag == True):
-        
+        raw = read_file()    
         print("Question: ")
         user_response = input()
         user_response = user_response.lower()
@@ -339,8 +338,6 @@ def main(argv):
             print("ROBO: You need to start with a wh-word",end="")
             #print(response(user_response,wh_word,entities_ne))
             #sent_tokens.remove(user_response)
-        
-
 if __name__ == "__main__": main(sys.argv)
 
 
