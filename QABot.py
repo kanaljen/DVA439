@@ -23,7 +23,7 @@ NE_GROUPS = ("NE","ORGANIZATION","PERSON","LOCATION","DATE","TIME","MONEY","PERC
 def read_file():
     """ tries to read <inputfile> and returns raw text """
     try:
-      f = open("nordic_test.txt", "r")
+      f = open("corpus.txt", "r")
       raw = f.read()
       #print(file,'-> raw')
       return raw
@@ -302,36 +302,42 @@ def main(argv):
     entities = train_entity()
     
     #calculate_weight(nltk.sent_tokenize(raw))
-    print("Question: ")
-    user_response = input()
-    
-    wh_word = whWord(user_response)
-    print('wh_word = ', wh_word)
-    
-    if wh_word:  
-
-        raw = raw + "\n" + user_response
+    print("Enter a question. Type 'bye' to end.")
+    flag = True
+    while(flag == True):
         
-        data = {'raw': nltk.sent_tokenize(raw)}
-        print('raw -> data')
-        # 2. Process raw text
-        data['processed'] = processor(data['raw'])
-        print('processed -> data')
-        # 3. Calculate weights for the words
-        data['weights'] = calculate_weight(data['processed'])
-        print('weights -> data')
+        print("Question: ")
+        user_response = input()
+        user_response = user_response.lower()
+        if user_response == 'bye':
+            flag = False
+        else:
+            wh_word = whWord(user_response)
+            print('wh_word = ', wh_word)
+        if wh_word:  
     
-        # Calculates and prints the response
-        response(user_response,wh_word,entities[:,2].tolist(),entities[:,0].tolist(), data)
+            raw = raw + "\n" + user_response
+            
+            data = {'raw': nltk.sent_tokenize(raw)}
+            print('raw -> data')
+            # 2. Process raw text
+            data['processed'] = processor(data['raw'])
+            print('processed -> data')
+            # 3. Calculate weights for the words
+            data['weights'] = calculate_weight(data['processed'])
+            print('weights -> data')
         
-        #print_answer(data)
-        # 4. Save output to json
-        #write_json(data,"test.txt")
-
-    else:
-        print("ROBO: You need to start with a wh-word",end="")
-        #print(response(user_response,wh_word,entities_ne))
-        #sent_tokens.remove(user_response)
+            # Calculates and prints the response
+            response(user_response,wh_word,entities[:,2].tolist(),entities[:,0].tolist(), data)
+            
+            #print_answer(data)
+            # 4. Save output to json
+            #write_json(data,"test.txt")
+    
+        else:
+            print("ROBO: You need to start with a wh-word",end="")
+            #print(response(user_response,wh_word,entities_ne))
+            #sent_tokens.remove(user_response)
         
 
 if __name__ == "__main__": main(sys.argv)
