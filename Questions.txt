@@ -91,12 +91,11 @@
 1 What are some famous swedish books?
 1 What are some famous swedish writers?
 1 What are some famous swedish actors?
-
-What can you tell me about Swedish cuisines?
-How is the Internet access in Sweden?
-What side do traffic drive on in Sweden?
-What is the name of the ice hockey team?
-When do you eat crayfish in Sweden?
-How many people rea newspapers in Sweden?
-When was state and church separated?
-What are some inportant public holidays in Sweden?
+1 What can you tell me about Swedish cuisines?
+1 How is the Internet access in Sweden?
+1 What side do traffic drive on in Sweden?
+0 What is the name of the ice hockey team?
+0 When do you eat crayfish in Sweden?
+1 How many read newspapers in Sweden?
+0 When was state and church separated?
+1 What are some important public holidays in Sweden?
