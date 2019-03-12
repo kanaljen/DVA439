@@ -99,3 +99,8 @@
 1 How many read newspapers in Sweden?
 0 When was state and church separated?
 1 What are some important public holidays in Sweden?
+
+1: 59st
+0.5: 10st
+0: 31st
+59+10/2 = 64
