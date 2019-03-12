@@ -4,7 +4,6 @@
 1   What is the capital city?
 0.5 What is the population in Sweden?
 1   Where is sweden located?
-?   How big is Sweden?
 0   What is the largest city?
 0   When did sweden fight in a war?
 0   What is the currency in sweden?
@@ -27,9 +26,7 @@
 1   Who is Zlatan?
 1	  What is the highest temperature recorded in Sweden?
 1	  What is the lowest temperature recorded in Sweden?
-?	  What is the size of Sweden?
 1	  What are the main morning tabloids in Sweden?
-?	  What is ABBA?
 1	  What is the number of people with foreign background in Sweden?
 1	  What are the taxes in Sweden?
 0.5	What is the GDP in Sweden?
@@ -50,7 +47,7 @@
 1	  When is the Saint Lucia Day in Sweden?
 1	  When is Walpurgis Night?
 1   Where was sweden first described in writing?
-1   How long was the wiking age?
+1   How long was the viking age?
 1   When was sweden hit by the black death?
 0.5 What was the Hansa?
 0   Who attempted to invade Russia?
@@ -74,29 +71,23 @@
 0.5 who is the head of state?
 1 Who has played a leading role in Swedish politics?
 0.5 what is the largest companies in sweden?
-
-What is Swedens official name?
-What counties does Sweden border?
-How many people of foreign decent lives in Sweden?
-Where does the word Sweden come from?
-What can you tell me about the vikings?
-What happend in Nystad?
-Why did many swedes migrate to America?
-What did Sweden do during World War II?
-Was Sweden a member of the Warsaw Pact?
-How large is Sweden compared to other contries?
-What is the highest temperature ever recorded in Sweden?
-What is the coldest temperature ever recorded in Sweden?
-What water masses surrounds Sweden?
-How many parties are there in the Swedish parliment?
-What is the most dominant political party in Sweden?
-How is the election turnout in Sweden?
-What can you tell me about the vikings?
-When was the first literary text written in Sweden?
-When was the Bible translated to Swedish?
-What are some traditional dishes of Sweden?
-What are some famous swedish films?
-What sports are Sweden good at?
-What are some famous swedish books?
-What are some famous swedish writters?
-What are some famous swedish actors?
+0.5 What is Swedens official name?
+0 What countries does Sweden border?
+1 How many people of foreign decent lives in Sweden?
+0 Where does the word Sweden come from?
+1 What can you tell me about the vikings?
+1 What happened in Nystad?
+1 What did Sweden do during World War II?
+0 How large is Sweden compared to other countries?
+1 What water masses surrounds Sweden?
+1 How many parties are there in the Swedish parliment?
+1 What is the most dominant political party in Sweden?
+1 How is the election turnout in Sweden?
+1 When was the first literary text written in Sweden?
+1 When was the Bible translated to Swedish?
+0.5 What are some traditional dishes of Sweden?
+0.5 What are some famous swedish films?
+1 What sports are Sweden good at?
+1 What are some famous swedish books?
+1 What are some famous swedish writers?
+1 What are some famous swedish actors?
