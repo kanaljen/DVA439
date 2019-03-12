@@ -64,3 +64,13 @@
 1   When did sweden stop conscription?
 0   What is the biggest airport in sweden?
 1   What language is spoken in sweden?
+0 who introduced christianity in sweden?
+1 what was the deluge?
+1 what happened after the battle of Narva?
+1 when was the coldest month?
+1 What is the most dominant tree?
+1 what is the boreo-nemoral region?
+1 what are the four fundamental laws?
+0.5 who is the head of state?
+1 Who has played a leading role in Swedish politics?
+0.5 what is the largest companies in sweden?
